@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root 'mods#index'
-
+  get '/login', to: 'users#new'
+  post '/login', to: 'users#create'
+  delete '/logout', to: 'sessions#logout'
   get '/mods/:id/lucky', to: 'mods#lucky'
   get '/mods/:id/students/new', to: 'students#new'
   post '/mods/:id/students', to: 'students#create'

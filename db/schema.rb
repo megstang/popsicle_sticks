@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_27_141414) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_27_195730) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,5 +31,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_27_141414) do
     t.index ["mod_id"], name: "index_students_on_mod_id"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "passwort_digest"
+    t.bigint "mod_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mod_id"], name: "index_users_on_mod_id"
+  end
+
   add_foreign_key "students", "mods"
+  add_foreign_key "users", "mods"
 end
