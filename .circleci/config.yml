@@ -33,7 +33,7 @@ jobs: # a collection of steps
           name: Install Rspec
           command: gem install rspec
       - run:
-          name: Bundle Install
+          name: Bundle Install 
           command: bundle install
       - run:
           name: Wait for DB
