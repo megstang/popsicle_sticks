@@ -74,13 +74,13 @@ class StudentsController < ApplicationController
   end 
 
   def promote_all
-    b1 = Mod.find_by(program: 'BEE', number: '1')
-    b2 = Mod.find_by(program: 'BEE', number: '2')
-    b3 = Mod.find_by(program: 'BEE', number: '3')
+    b1 = Mod.find_by(program: 'BE', number: '1')
+    b2 = Mod.find_by(program: 'BE', number: '2')
+    b3 = Mod.find_by(program: 'BE', number: '3')
 
-    f1 = Mod.find_by(program: 'FEE', number: '1')
-    f2 = Mod.find_by(program: 'FEE', number: '2')
-    f3 = Mod.find_by(program: 'FEE', number: '3')
+    f1 = Mod.find_by(program: 'FE', number: '1')
+    f2 = Mod.find_by(program: 'FE', number: '2')
+    f3 = Mod.find_by(program: 'FE', number: '3')
 
     c4 = Mod.find_by(program: 'Combined', number: '4')
 
