@@ -30,6 +30,9 @@ jobs: # a collection of steps
             source $BASH_ENV
             gem install bundler
       - run:
+          name: Install Rspec
+          command: gem install rspec
+      - run:
           name: Bundle Install
           command: bundle install
       - run:
