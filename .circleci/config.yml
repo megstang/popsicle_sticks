@@ -7,17 +7,17 @@ jobs:
       - image: cimg/ruby:3.1.1 
         environment:
           PGHOST: localhost
-          PGUSER: road_to_aid_be
+          PGUSER: postgres
           RAILS_ENV: test
       - image: postgres:13.2
         environment:
-          POSTGRES_USER: road_to_aid_be
-          POSTGRES_DB: road_to_aid_be_test
+          POSTGRES_USER: postgres
+          POSTGRES_DB: popsicle_sticks_test
           POSTGRES_PASSWORD:
     steps:
       - checkout
       - run:
-          name: road_to_aid_be
+          name: bundle version
           command: bundle -v
       - ruby/bundle-install
 
