@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   ruby: circleci/ruby@0.1.2
 jobs:
-  build:
+  build-and-test:
     docker:
       - image: cimg/ruby:3.1.1 
         environment:
@@ -25,7 +25,7 @@ jobs:
       - run: bundle install --path vendor/bundle
       - run: bundle exec rake db:migrate
       - run: bundle exec rspec
-# workflows:
-#   build-test-deploy:
-#     jobs:
-#       - build-and-test
+workflows:
+  build-test-deploy:
+    jobs:
+      - build-and-test
